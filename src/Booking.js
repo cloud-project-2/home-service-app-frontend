@@ -17,7 +17,7 @@ export default function Booking() {
         e.preventDefault();
         const token = localStorage.getItem('token');
         try {
-            const res = await fetch('http://localhost:3005/api/book', {
+            const res = await fetch('http://BookingService-ALB-1975395896.us-east-1.elb.amazonaws.com/api/book', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

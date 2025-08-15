@@ -13,7 +13,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch('http://localhost:3005/api/book', {
+    const res = await fetch('http://BookingService-ALB-1975395896.us-east-1.elb.amazonaws.com/api/book', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, service, datetime })

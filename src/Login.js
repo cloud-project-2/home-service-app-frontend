@@ -8,7 +8,7 @@ export default function Login() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        const res = await fetch('http://localhost:3001/auth/login', {
+        const res = await fetch('http://Booking-Service-NLB-1ed6b29947aab9d7.elb.us-east-1.amazonaws.com:3000/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password }),
