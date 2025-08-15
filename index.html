@@ -19,7 +19,7 @@
             const service = document.getElementById("service").value;
             const datetime = document.getElementById("datetime").value;
 
-            const res = await fetch("http://localhost:3001/api/book", {
+            const res = await fetch("http://Booking-Service-NLB-1ed6b29947aab9d7.elb.us-east-1.amazonaws.com/api/book", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, service, datetime })
