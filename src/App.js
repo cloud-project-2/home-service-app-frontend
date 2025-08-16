@@ -1,56 +1,50 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from './Login';
-import Register from './Register';
-import Booking from './Booking';
-
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Login from "./Login";
+import Register from "./Register";
+import Booking from "./Booking";
 
 function App() {
-  const [name, setName] = useState('');
-  const [service, setService] = useState('');
-  const [datetime, setDatetime] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const token = localStorage.getItem('token');
-    const res = await fetch('http://Booking-Service-NLB-1ed6b29947aab9d7.elb.us-east-1.amazonaws.com/api/book', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`
-      },
-      body: JSON.stringify({ name, service, datetime })
-    });
-    const data = await res.json();
-    setMessage(data.message);
-  };
-
   return (
-    <div>
-      <Router>
-        <nav>
-          <Link to="/register">Register</Link> |{' '}
-          <Link to="/login">Login</Link> |{' '}
-          <Link to="/book">Book</Link>
-          <Link to="/health">Health</Link>
-        </nav>
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/book" element={<Booking />} />
-          <Route path="/health" element={<div>Health Check: OK</div>} />
-        </Routes>
-      </Router>
-      {/*<h1>Home Service Booking</h1>*/}
-      {/*<form onSubmit={handleSubmit}>*/}
-      {/*  <input type="text" placeholder="Your Name" value={name} onChange={e => setName(e.target.value)} required /><br />*/}
-      {/*  <input type="text" placeholder="Service (e.g., Plumber)" value={service} onChange={e => setService(e.target.value)} required /><br />*/}
-      {/*  <input type="datetime-local" value={datetime} onChange={e => setDatetime(e.target.value)} required /><br />*/}
-      {/*  <button type="submit">Book Now</button>*/}
-      {/*</form>*/}
-      {/*<p>{message}</p>*/}
-    </div>
+      <div className="min-h-screen bg-gray-50">
+        <Router>
+          {/* Navbar */}
+          <nav className="bg-white shadow-md">
+            <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+              <h1 className="text-2xl font-bold text-indigo-600">Home Service</h1>
+              <div className="space-x-6">
+                <Link
+                    to="/register"
+                    className="text-gray-700 hover:text-indigo-600 transition font-medium"
+                >
+                  Register
+                </Link>
+                <Link
+                    to="/login"
+                    className="text-gray-700 hover:text-indigo-600 transition font-medium"
+                >
+                  Login
+                </Link>
+                <Link
+                    to="/book"
+                    className="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow hover:bg-indigo-700 transition"
+                >
+                  Book Now
+                </Link>
+              </div>
+            </div>
+          </nav>
+
+          {/* Routes */}
+          <div className="max-w-6xl mx-auto px-6 py-8">
+            <Routes>
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/book" element={<Booking />} />
+            </Routes>
+          </div>
+        </Router>
+      </div>
   );
 }
 
