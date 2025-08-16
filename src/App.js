@@ -42,14 +42,14 @@ function App() {
           <Route path="/health" element={<div>Health Check: OK</div>} />
         </Routes>
       </Router>
-      <h1>Home Service Booking</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Your Name" value={name} onChange={e => setName(e.target.value)} required /><br />
-        <input type="text" placeholder="Service (e.g., Plumber)" value={service} onChange={e => setService(e.target.value)} required /><br />
-        <input type="datetime-local" value={datetime} onChange={e => setDatetime(e.target.value)} required /><br />
-        <button type="submit">Book Now</button>
-      </form>
-      <p>{message}</p>
+      {/*<h1>Home Service Booking</h1>*/}
+      {/*<form onSubmit={handleSubmit}>*/}
+      {/*  <input type="text" placeholder="Your Name" value={name} onChange={e => setName(e.target.value)} required /><br />*/}
+      {/*  <input type="text" placeholder="Service (e.g., Plumber)" value={service} onChange={e => setService(e.target.value)} required /><br />*/}
+      {/*  <input type="datetime-local" value={datetime} onChange={e => setDatetime(e.target.value)} required /><br />*/}
+      {/*  <button type="submit">Book Now</button>*/}
+      {/*</form>*/}
+      {/*<p>{message}</p>*/}
     </div>
   );
 }
