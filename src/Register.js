@@ -9,7 +9,7 @@ export default function Register() {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        const res = await fetch('http://Booking-Service-NLB-1ed6b29947aab9d7.elb.us-east-1.amazonaws.com:3000/auth/register', {
+        const res = await fetch('https://1xxcc82bs9.execute-api.us-east-1.amazonaws.com/v1/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, password }),
