@@ -18,7 +18,7 @@ export default function Booking() {
         const token = localStorage.getItem("token");
         try {
             const res = await fetch(
-                "http://Booking-Service-NLB-1ed6b29947aab9d7.elb.us-east-1.amazonaws.com/api/book",
+                "https://1xxcc82bs9.execute-api.us-east-1.amazonaws.com/v1/api/book",
                 {
                     method: "POST",
                     headers: {
