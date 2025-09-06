@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "formik": "^2.4.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.7.1",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "yup": "^1.7.0"
   },
   "scripts": {
-    "start": "PORT=80 react-scripts start"
+    "start": "HOST=bookingservice-alb-1975395896.us-east-1.elb.amazonaws.com PORT=80 react-scripts start",
+    "start-demo": "HOST=bookingservice-alb-1975395896.us-east-1.elb.amazonaws.com PORT=80 react-scripts start"
   },
   "browserslist": {
     "production": [
